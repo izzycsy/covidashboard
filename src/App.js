@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 
 import InfectedCountryList from "./components/InfectedCountryList";
-import InfectedCountryMap from "./components/InfectedCountryMap";
+// import InfectedCountryMap from "./components/InfectedCountryMap";
 import covidData from "./covidData";
 
 require("dotenv").config();
@@ -81,15 +81,14 @@ function App() {
   }, []);
 
   
-
   return (
     <Grid container>
-      <Grid style={{ height: "100vh", overflowY: "auto" }} lg={6} sm={12} item>
+      <Grid style={{ height: "100vh", overflowY: "auto" }} lg={12} sm={12} item>
         {infectedCountries && <InfectedCountryList infectedCountries={infectedCountries} updatedAt={updatedAt} />}
       </Grid>
-      <Grid style={{ height: "100vh" }} lg={6} sm={12} item>
-      {infectedCountries && <InfectedCountryMap infectedCountries={infectedCountries} />}
-      </Grid>
+      {/* <Grid style={{ height: "100vh" }} lg={6} sm={12} item> */}
+      {/* {infectedCountries && <InfectedCountryMap infectedCountries={infectedCountries} />} */}
+      {/* </Grid> */}
     </Grid>
   );
 }
