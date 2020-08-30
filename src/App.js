@@ -8,7 +8,7 @@ import covidData from "./covidData";
 require("dotenv").config();
 
 function App() {
-  let [infectedCountries, setinfectedCountries] = useState([]);
+  let [infectedCountries, setinfectedCountries] = useState([]); //render nothin [], then something []
   let [updatedAt, setUpdatedAt] = useState();
 
   useEffect(() => {
@@ -17,7 +17,13 @@ function App() {
     
     setinfectedCountries(covidData.data); //checking fetch data from js
 
+    const today = new Date();
+    const formattedDate = today.getFullYear() + "-" + (today.getMonth() + 1) + "-"+today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    setUpdatedAt(formattedDate);
+
     /*
+    //RapidAPI
     const fetchData = async () => {
       let infectedCountriesResponse = await fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php", 
       {
@@ -37,37 +43,44 @@ function App() {
         allCountries = await allCountriesResponse.json();
       }
 
+      //add latlng into covidData
       if (infectedCountriesResponse.ok) {
         let { countries_stat, statistic_taken_at } = await infectedCountriesResponse.json();
-        console.log("countries_stat", JSON.stringify(countries_stat));
-        console.log("statistic_taken_at", statistic_taken_at);
+        
+        const newData = countries_stat.map(stat => {
+          let countryFound = allCountries.find(
+            country =>
+              country.name.toUpperCase().indexOf(stat.country_name.toUpperCase()) !== -1 ||
+              country.altSpellings.findIndex(
+                alt => alt.toUpperCase().indexOf(stat.country_name.toUpperCase()) !== -1,
+              ) !== -1,
+          );
+          if (!countryFound) countryFound = {}; //return empty obj, latlng undefine
 
-        setinfectedCountries(
-          countries_stat.map(stat => {
-            let countryFound = allCountries.find(
-              country =>
-                country.name.toUpperCase().indexOf(stat.country_name.toUpperCase()) !== -1 ||
-                country.altSpellings.findIndex(
-                  alt => alt.toUpperCase().indexOf(stat.country_name.toUpperCase()) !== -1,
-                ) !== -1,
-            );
-            if (!countryFound) countryFound = {};
+          return {
+            ...stat, //adding lat * lng to the covidData.js
+            urlFlag: countryFound.flag,
+            latlng: countryFound.latlng,
+          };
+        })
+        setinfectedCountries(newData);
 
-            return {
-              ...stat,
-              urlFlag: countryFound.flag,
-              latlng: countryFound.latlng,
-            };
-          }),
-        );
-
+        // console.log("countries_stat", JSON.stringify(newData));
         setUpdatedAt(statistic_taken_at);
+      } else { 
+        setinfectedCountries(covidData.data); //else use covidData.js
+
+        const today = new Date();
+        const formattedDate = today.getFullYear() + "-" + (today.getMonth() + 1) + "-"+today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+        setUpdatedAt(formattedDate);
       }
     };
 
     fetchData(); */
   }, []);
 
+  
 
   return (
     <Grid container>
@@ -75,7 +88,7 @@ function App() {
         {infectedCountries && <InfectedCountryList infectedCountries={infectedCountries} updatedAt={updatedAt} />}
       </Grid>
       <Grid style={{ height: "100vh" }} lg={6} sm={12} item>
-      {/* {infectedCountries && <InfectedCountryMap infectedCountries={infectedCountries} />} */}
+      {infectedCountries && <InfectedCountryMap infectedCountries={infectedCountries} />}
       </Grid>
     </Grid>
   );
