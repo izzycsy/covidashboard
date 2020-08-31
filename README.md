@@ -1,1 +1,1 @@
-## covidmap
+## Covid Dashboard
