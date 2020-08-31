@@ -83,6 +83,10 @@ function App() {
   
   return (
     <Grid container>
+      {/* <Grid style={{ height: "100vh" }} lg={6} sm={12} item>
+        add the chart
+      </Grid> */}
+
       <Grid style={{ height: "100vh", overflowY: "auto" }} lg={12} sm={12} item>
         {infectedCountries && <InfectedCountryList infectedCountries={infectedCountries} updatedAt={updatedAt} />}
       </Grid>
