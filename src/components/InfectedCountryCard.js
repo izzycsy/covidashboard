@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, Avatar, CardContent, Grid, Container } from "@material-ui/core";
+// import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 
 export default function InfectedCountryCard({
   urlFlag,
@@ -10,12 +11,23 @@ export default function InfectedCountryCard({
 }) {
   return (
     <Card>
+      
       <Container className="oneHorizontalCard">
-
-      <CardHeader
+      
+      {/* <button className="countryButton"> */}
+      
+      <div>
+        <CardHeader
         avatar={<Avatar src={urlFlag} />}
-        title={country_name}
-      />
+        title={country_name} className="headerCountry"
+        />
+      </div>
+      
+
+      {/* <div>
+      <FavoriteBorderOutlinedIcon style={{ textAlign: "right" }} className="heartIcon" />
+      </div> */}
+      
       <CardContent>
 
         <Grid style={{ textAlign: "center" }} container>
@@ -61,6 +73,8 @@ export default function InfectedCountryCard({
 
         </Grid>
       </CardContent>
+
+      {/* </button> */}
 
       </Container>
     </Card>

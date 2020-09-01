@@ -21,26 +21,49 @@ code {
   font-family: "Titillium Web", source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: 40px;
   font-weight: 700;
+  color: #461072;
 }
 
 .subtitle { 
   font-family: "Titillium Web", source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: 30px;
   font-weight: 600;
-  color: #72725A; 
+  color: #8C70E0; 
 }
 
 /* InfectedCountryList */
 .oneHorizontalCard {
-  background-color: #EBEBEB;
-}
-
-.columnOne {
-  display: "flex";
-  flex-direction: "column";
-  justify-content: "center";
+  background-color: #FFEBED;
 }
 
 .cardDivider {
-  border-right: solid #CB997C;   
+  border-right: solid #8C70E0;   
+}
+
+.headerCountry {
+  font-family: "Titillium Web", source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: #461072; 
+}
+
+.heartIcon {
+  color: #CB997C; 
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.countryButton {
+  display: flex!important;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  cursor: pointer!important;
+  width: 100%;
+  all: unset;
+  /* height: auto;
+  width: auto; */
 }
