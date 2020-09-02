@@ -49,9 +49,7 @@ code {
 
 .heartIcon {
   color: #CB997C; 
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
+  padding: 20px;
 }
 
 .countryButton {

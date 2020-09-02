@@ -1,85 +1,78 @@
-import React, { useState } from 'react';
-import { Container, Grid, } from "@material-ui/core";
+import React, {  } from 'react';
 import InfectedCountryCard from "./InfectedCountryCard";
-
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
 import CovidGraph from './CovidGraph';
-
-
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
-
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
+import { makeStyles } from '@material-ui/core/styles';
+import { Container, Grid } from "@material-ui/core";
+import Switch from '@material-ui/core/Switch';
+import Paper from '@material-ui/core/Paper';
+import Grow from '@material-ui/core/Grow';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    height: 180,
+  },
+  container: {
+    display: 'flex',
+  },
   paper: {
-    position: 'absolute',
-    width: 800,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    margin: theme.spacing(1),
+  },
+  svg: {
+    width: 100,
+    height: 100,
+  },
+  polygon: {
+    fill: theme.palette.common.white,
+    stroke: theme.palette.divider,
+    strokeWidth: 1,
   },
 }));
-
 
 export default function InfectedCountryList({ infectedCountries, updatedAt }) {
 
   console.log(infectedCountries);
 
     const classes = useStyles();
-    // getModalStyle is not a pure function, we roll the style only on the first render
-    const [modalStyle] = useState(getModalStyle);
-    const [open, setOpen] = useState(false);
-  
-    const handleOpen = () => {
-      setOpen(true);
+    const [checked, setChecked] = React.useState(false);
+
+    const handleChange = () => {
+      setChecked((prev) => !prev);
     };
-  
-    const handleClose = () => {
-      setOpen(false);
-    };
-  
 
   return (
     <Container>
       <p style={{ marginBottom: "0" }} className="title">Covid-19 Dashboard</p>
       <p style={{ marginTop: "0" }} className="subtitle">updated: {updatedAt}</p>
-      
+     
       <Grid spacing={1} container>
-        {infectedCountries.map(country => (
-          <Grid key={country.country_name} lg={6} xs={12} sm={12} item>
+          {infectedCountries.map(country => (
+            <Grid key={country.country_name} lg={6} xs={12} sm={12} item>        
+            <InfectedCountryCard {...country} />
+            </Grid>
+          ))}
 
-            {/* <button onClick={handleOpen} className="countryButton"> */}
-              <InfectedCountryCard {...country} />
-            {/* </button> */}
+            <div className={classes.root}>
+              <FormControlLabel
+                control={<Switch checked={checked} onChange={handleChange} />} label="Show" />
 
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="simple-modal-title"
-              aria-describedby="simple-modal-description"
-            >
-              
-            <div style={modalStyle} className={classes.paper}>
-              <CovidGraph />
+              <div className={classes.container}>
+                  {/* Conditionally applies the timeout prop to change the entry speed. */}
+
+                <Grow in={checked}
+                      style={{ transformOrigin: '0 0 0' }}
+                      {...(checked ? { timeout: 1000 } : {})}
+                >
+                  <Paper elevation={4} className={classes.paper}>
+                    <svg className={classes.svg}>
+                        <polygon points="0,100 50,00, 100,100" className={classes.polygon} />
+                        <CovidGraph />
+                      </svg>
+                    </Paper>
+                  </Grow>
+                </div>
             </div>
-
-            </Modal>
-            
-          </Grid>
-        ))}
+  
       </Grid>
     </Container>
   );
