@@ -32,7 +32,7 @@ export default function InfectedCountryCard({
 
         <Grid style={{ textAlign: "center" }} container>
 
-          <Grid sm={4} xs={4} lg={4} item className="cardDivider">
+          <Grid item sm={4} xs={4} lg={4}  className="cardDivider">
             <div
               style={{
                 display: "flex",
@@ -45,7 +45,7 @@ export default function InfectedCountryCard({
             </div>
           </Grid>
 
-          <Grid sm={4} xs={4} lg={4} item className="cardDivider">
+          <Grid item sm={4} xs={4} lg={4} className="cardDivider">
             <div
               style={{
                 display: "flex",
@@ -58,7 +58,7 @@ export default function InfectedCountryCard({
             </div>
           </Grid>
 
-          <Grid sm={4} xs={4} lg={4} item>
+          <Grid item sm={4} xs={4} lg={4}>
             <div
               style={{
                 display: "flex",
