@@ -4,7 +4,7 @@ import { Grid } from "@material-ui/core";
 import InfectedCountryList from "./components/InfectedCountryList";
 import covidData from "./covidData";
 
-require("dotenv").config();
+// require("dotenv").config();
 
 function App() {
   let [infectedCountries, setinfectedCountries] = useState([]); //render nothing [], then something []
