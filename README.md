@@ -40,4 +40,4 @@ API: Google Cloud Platform; Maps JavaScript API,
 • Oleksii Trekhleb’s <a href=“https://github.com/trekhleb/covid-19”>covid-19</a>
 
 
-Primary typeface: <a href=“https://fonts.google.com/specimen/Titillium+Web?query=titill”>Titillium Web</a>
+Primary typeface: <a href="https://fonts.google.com/specimen/Titillium+Web?query=titill%E2%80%9D%3ETitillium">Titillium Web</a>
