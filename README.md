@@ -1,11 +1,12 @@
 ## Covid Dashboard
 
 ### Problem Statement: 
-The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep 2020, caused by <a href=“https://www.who.int/ith/diseases/sars/en/“>severe acute respiratory syndrome coronavirus 2</a> (SARS-CoV-2). This dashboard was inspired by <a href=“https://systems.jhu.edu/“>CSSE JHU’s</a> <a href=“https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6”>Dashboard</a> and aims provide information to users about the countries infected and number of cases they face. 
+The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep 2020, caused by <a href=“https://www.who.int/ith/diseases/sars/en/“>severe acute respiratory syndrome coronavirus 2</a> (SARS-CoV-2). This dashboard was inspired by <a href=“https://systems.jhu.edu/“>CSSE JHU’s</a> Dashboard and aims provide information to users about the countries infected and number of cases they face. 
 
 
 ### MVP:
 • Present covid data using dashboard
+• Data should represent per country
 • Global data should present numbers indicating cases, recovered, etc
 • Click to show more insights to the specific	country’s situation
  
@@ -20,11 +21,11 @@ The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep
 
 
 ### Technologies used:
-Frontend: React, Material UI
+Frontend: ReactJS
 Backend: NodeJS, ExpressJS
-API: Google Cloud Platform; Maps JavaScript API, 
-<a href=“https://github.com/google-map-react/google-map-react#readme”>Google Map React</a>, 
-<a href=“https://restcountries.eu/#api-endpoints-all”>RESTful API</a>
+API: 
+<a href=“https://restcountries.eu/#api-endpoints-all”>RESTful API</a>, <a href="https://rapidapi.com/">RapidAPI</a>
+User Interface: <a href="https://material-ui.com/">Material-UI</a>
 
 
 #### Authors & Acknowledgment: 
@@ -34,7 +35,7 @@ API: Google Cloud Platform; Maps JavaScript API,
 
 – <a href=“https://covidsitrep.moh.gov.sg/“>Ministry of Health Singapore</a>
 
-• <a href=“https://github.com/google-map-react/google-map-react#readme”>Google Map React</a>
+• <a href=“https://rapidapi.com/astsiatsko/api/coronavirus-monitor”>Coronavirus monitor API Documentation</a>
 
 
 • Oleksii Trekhleb’s <a href=“https://github.com/trekhleb/covid-19”>covid-19</a>
