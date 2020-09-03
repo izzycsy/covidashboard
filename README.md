@@ -5,7 +5,7 @@ The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep
 
 
 ### MVP:
-• Up-to-date covid data through dashboard
+• Up-to-date covid-19 data through dashboard
 <br>• Data should represent per country
 <br>• Global data should present numbers indicating cases, recovered, etc
 <br>• Click to show more insights to the specific	country’s situation
