@@ -16,7 +16,7 @@ The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep
 
 
 ### Furthers: 
-• Filter bar
+• Filter bar function
 <br>• Improve UI
 
 
@@ -30,7 +30,7 @@ Frontend: ReactJS
 
 #### Authors & Acknowledgment: 
 
-• Understanding COVID-19 data: 
+• Understanding COVID-19: 
 <br>– <a href="https://www.who.int/news-room/feature-stories/detail/who-updates-covid-19-dashboard-with-better-data-visualization">World Health Organisation</a>
 <br>– <a href="https://covidsitrep.moh.gov.sg/">Ministry of Health Singapore</a>
 
