@@ -16,6 +16,7 @@ code {
   font-family: "Titillium Web", source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+
 /* InfectedCountryList */
 .title { 
   font-family: "Titillium Web", source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -30,6 +31,7 @@ code {
   font-weight: 600;
   color: #6190BD; 
 }
+
 
 /* InfectedCountryList */
 .oneHorizontalCard {
@@ -48,19 +50,6 @@ code {
   font-weight: 600;
 }
 
-/* .countryButton {
-  display: flex!important;
-  flex-wrap: wrap;
-  flex-direction: row;
-  background: none!important;
-  border: none;
-  padding: 0!important;
-  cursor: pointer!important;
-  width: 100%;
-  all: unset;
-  /* height: auto;
-  width: auto; */ 
-/* } */
 
 /* TRIGGER PIECHART */
 .buttonInsights {
