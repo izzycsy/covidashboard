@@ -13,7 +13,7 @@ import { Doughnut } from 'react-chartjs-2';
 //   datasets: [
 //     {
 //       data: [ 
-//         this.props.total_recovered, 
+//         this.new_deaths,
 //         this.props.active_cases, 
 //         this.props.serious_critical,
 //         this.props.total_tests, 
@@ -41,21 +41,21 @@ import { Doughnut } from 'react-chartjs-2';
 export default class CovidGraph extends React.Component {
   state = {
     type: 'doughnut',
-    labels: [
-      'Total Recovered', 
+    labels: [ 
       'Active Cases', 
       'Critical',
       'Tested', 
       'New Cases',
+      'New Deaths',
       ],
     datasets: [
       {
         data: [ 
-          this.props.total_recovered, 
-          this.props.active_cases, 
-          this.props.serious_critical,
-          this.props.total_tests, 
-          this.props.new_cases,
+          parseFloat(this.props.data.activeCases.replace(/,/g, '')), 
+          parseFloat(this.props.data.seriousCritical.replace(/,/g, '')),
+          parseFloat(this.props.data.totalTests.replace(/,/g, '')), 
+          parseFloat(this.props.data.newCases.replace(/,/g, '')),
+          parseFloat(this.props.data.newDeaths.replace(/,/g, '')),
         ],
         label: 'Cases',
         backgroundColor: [
@@ -75,19 +75,10 @@ export default class CovidGraph extends React.Component {
       }
     ]
   }
-  // state = {
-  //   data: [
-  //     this.props.total_recovered, 
-  //     this.props.active_cases, 
-  //     this.props.serious_critical,
-  //     this.props.total_tests, 
-  //     this.props.new_cases 
-  // ]
-  // }
   
 
   render() {
-    console.log(this.props.data);
+    console.log(this.state.datasets[0].data);
     return (
       <div>
         <Doughnut
@@ -98,8 +89,10 @@ export default class CovidGraph extends React.Component {
             // maintainAspectRatio: true,
             title:{
               display: true,
-              text: 'Insights to cases',
-              fontSize: 24
+              text: "Insights to country's cases",
+              fontSize: 30,
+              fontFamily: "Titillium Web",
+              fontColor: "#243F56",
                 },
             legend:{
               display: true,

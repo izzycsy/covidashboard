@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//to define data from covidData
 export default function InfectedCountryCard({
   urlFlag,
   country_name,
@@ -39,7 +40,8 @@ export default function InfectedCountryCard({
   active_cases, 
   serious_critical,
   total_tests, 
-  new_cases 
+  new_cases,
+  new_deaths
 })
 
 {
@@ -54,13 +56,14 @@ export default function InfectedCountryCard({
     setOpen(false);
   };
 
-let data = {
-  totalRecovered: total_recovered, 
-  activeCases: active_cases, 
-  seriousCritical: serious_critical,
-  totalTests: total_tests, 
-  newCases: new_cases,
-}
+  //data for piechart
+  let data = {
+    activeCases: active_cases, 
+    seriousCritical: serious_critical,
+    totalTests: total_tests, 
+    newCases: new_cases,
+    newDeaths: new_deaths,
+  }
 
   return (
     <Card>
@@ -106,9 +109,8 @@ let data = {
                 <Fade in={open}>
                   <div className={classes.paper}>
                     {/* <h2 id="transition-modal-title">Transition modal</h2> */}
-                    <CovidGraph data={data}
-                    
-                     />
+                    {/* access data from "let data" */}
+                    <CovidGraph data={data} />
                   </div>
                 </Fade>
 
