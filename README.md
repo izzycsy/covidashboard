@@ -1,7 +1,7 @@
 ## Covidashboard
 
 ### Problem Statement: 
-The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep 2020, caused by <a href="https://www.who.int/ith/diseases/sars/en/">severe acute respiratory syndrome coronavirus 2</a> (SARS-CoV-2). This dashboard was inspired by <a href="https://systems.jhu.edu/">CSSE JHU’s Dashboard</a> and aims provide information to users about the countries infected and number of cases they face. 
+The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep 2020, caused by <a href="https://www.who.int/ith/diseases/sars/en/">severe acute respiratory syndrome coronavirus 2</a> (SARS-CoV-2). This dashboard was inspired by <a href="https://systems.jhu.edu/">CSSE JHU’s Dashboard</a> and aims to provide information to users about the countries infected and number of cases they face. 
 
 
 ### MVP:
