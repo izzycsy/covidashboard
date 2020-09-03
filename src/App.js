@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 
 import InfectedCountryList from "./components/InfectedCountryList";
-// import InfectedCountryMap from "./components/InfectedCountryMap";
 import covidData from "./covidData";
 
 require("dotenv").config();
@@ -15,6 +14,7 @@ function App() {
     // console.log(covidData);
     // console.log(process.env.REACT_APP_COVIDKEY)
     
+    //setInfectedCountries data
     setinfectedCountries(covidData.data); //checking fetch data from js
 
     const today = new Date();
@@ -84,16 +84,11 @@ function App() {
   return (
     <div>
       <Grid container>
-        {/* <Grid style={{ height: "100vh" }} lg={6} sm={12} item>
-          add the chart
-        </Grid> */}
         
         <Grid style={{ height: "100vh", overflowY: "auto" }} lg={12} sm={12} item>
           {infectedCountries && <InfectedCountryList infectedCountries={infectedCountries} updatedAt={updatedAt} />}
         </Grid>
-        {/* <Grid style={{ height: "100vh" }} lg={6} sm={12} item> */}
-        {/* {infectedCountries && <InfectedCountryMap infectedCountries={infectedCountries} />} */}
-        {/* </Grid> */}
+        
       </Grid>
     </div>
   );
