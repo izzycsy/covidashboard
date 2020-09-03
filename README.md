@@ -12,7 +12,7 @@ The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep
  
 
 ### Demo:
-<img src="./public/covidashboard_demo.gif" width=400 height=300>
+<img src="./public/covidashboard_demo.gif" width=400 height=auto>
 
 
 ### Furthers: 
