@@ -21,7 +21,7 @@ code {
   font-family: "Titillium Web", source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: 40px;
   font-weight: 700;
-  color: #0C151D;
+  color: #032426;
 }
 
 .subtitle { 
@@ -47,11 +47,6 @@ code {
   color: #0C151D; 
 }
 
-.heartIcon {
-  color: #CB997C; 
-  padding: 20px;
-}
-
 .countryButton {
   display: flex!important;
   flex-wrap: wrap;
@@ -65,3 +60,10 @@ code {
   /* height: auto;
   width: auto; */
 }
+
+/* PIECHART */
+.heartIcon {
+  color: #CB997C; 
+  padding: 20px;
+}
+

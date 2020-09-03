@@ -8,7 +8,7 @@ import covidData from "./covidData";
 require("dotenv").config();
 
 function App() {
-  let [infectedCountries, setinfectedCountries] = useState([]); //render nothin [], then something []
+  let [infectedCountries, setinfectedCountries] = useState([]); //render nothing [], then something []
   let [updatedAt, setUpdatedAt] = useState();
 
   useEffect(() => {

@@ -1,36 +1,47 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import covidData from '../covidData';
 
 const state = {
-  labels: ['January', 'February', 'March',
-           'April', 'May', 'June', 'July'],
+  labels: [
+    'Total Recovered', 
+    'Active Cases', 
+    'Critical',
+    'Tested', 
+    'New Cases',
+    ],
   datasets: [
     {
       label: 'Cases',
       backgroundColor: [
-        '#B21F00',
-        '#C9DE00',
-        '#2FDE00',
-        '#00A6B4',
-        '#6800B4',
-        '#B21F00',
-        '#C9DE00',
+        '#FF9747',
+        '#FF5C6F',
+        '#793285',
+        '#4626A6',
+        '#365E81',
       ],
       hoverBackgroundColor: [
-      '#501800',
-      '#4B5000',
-      '#175000',
-      '#003350',
-      '#35014F',
-      '#B21F00',
-     '#C9DE00',
+      '#FFD1AD',
+      '#FFADB6',
+      '#EAD2EE',
+      '#D9B8F5',
+      '#C5D7E7',
       ],
-      data: [65, 59, 80, 81, 56, 12, 12]
     }
   ]
 }
 
 export default class CovidGraph extends React.Component {
+  state = {
+    data: [
+      this.props.total_recovered, 
+      this.props.active_cases, 
+      this.props.erious_critical,
+      this.props.total_tests, 
+      this.props.new_cases,
+  ],
+  }
+
   render() {
     return (
       <div>
@@ -42,7 +53,7 @@ export default class CovidGraph extends React.Component {
             // maintainAspectRatio: true,
             title:{
               display: true,
-              text: 'Average Cases per month',
+              text: 'Insights to cases',
               fontSize: 24
                 },
             legend:{
