@@ -1,43 +1,6 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 
-// const state = {
-//   type: 'doughnut',
-//   labels: [
-//     'Total Recovered', 
-//     'Active Cases', 
-//     'Critical',
-//     'Tested', 
-//     'New Cases',
-//     ],
-//   datasets: [
-//     {
-//       data: [ 
-//         this.new_deaths,
-//         this.props.active_cases, 
-//         this.props.serious_critical,
-//         this.props.total_tests, 
-//         this.props.new_cases,
-//       ],
-//       label: 'Cases',
-//       backgroundColor: [
-//         '#FF9747',
-//         '#FF5C6F',
-//         '#793285',
-//         '#4626A6',
-//         '#365E81',
-//       ],
-//       hoverBackgroundColor: [
-//       '#FFD1AD',
-//       '#FFADB6',
-//       '#EAD2EE',
-//       '#D9B8F5',
-//       '#C5D7E7',
-//       ],
-//     }
-//   ]
-// }
-
 export default class CovidGraph extends React.Component {
   state = {
     type: 'doughnut',
@@ -82,7 +45,8 @@ export default class CovidGraph extends React.Component {
     return (
       <div>
         <Doughnut
-          data = {this.state.datasets[0].data}
+          // data = {this.state.datasets[0].data}
+          data = {this.state}
           options = {
             {
             // responsive: true, 

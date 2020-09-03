@@ -41,7 +41,8 @@ export default function InfectedCountryCard({
   serious_critical,
   total_tests, 
   new_cases,
-  new_deaths
+  new_deaths,
+  total_cases_per_1m_population,
 })
 
 {
@@ -63,6 +64,7 @@ export default function InfectedCountryCard({
     totalTests: total_tests, 
     newCases: new_cases,
     newDeaths: new_deaths,
+    casesPerOneM: total_cases_per_1m_population,
   }
 
   return (
@@ -108,7 +110,7 @@ export default function InfectedCountryCard({
               >
                 <Fade in={open}>
                   <div className={classes.paper}>
-                    {/* <h2 id="transition-modal-title">Transition modal</h2> */}
+  
                     {/* access data from "let data" */}
                     <CovidGraph data={data} />
                   </div>
