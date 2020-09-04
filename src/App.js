@@ -22,7 +22,7 @@ function App() {
 
     setUpdatedAt(formattedDate);
 
-    /*
+    
     //RapidAPI
     const fetchData = async () => {
       let infectedCountriesResponse = await fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php", 
@@ -77,7 +77,7 @@ function App() {
       }
     };
 
-    fetchData(); */
+    fetchData(); //end comment here
   }, []);
 
   
