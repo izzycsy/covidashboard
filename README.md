@@ -21,7 +21,7 @@ The Coronavirus	 pandemic (COVID-19), is an ongoing global pandemic (as of 4 Sep
 
 
 ### Technologies used:
-Frontend: ReactJS
+Frontend: React.js
 <br>API:
 <a href="https://restcountries.eu/#api-endpoints-all">RESTful API</a>, <a href="https://rapidapi.com/">Rapid API</a>
 <br>User Interface: <a href="https://material-ui.com/">Material-UI</a>
